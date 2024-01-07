@@ -1,0 +1,38 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        System.out.print("Hesabınız Var mı ? ");
+        Scanner scanner1 = new Scanner(System.in);
+        String input = scanner1.nextLine();
+
+        if (input.equals("Hayır")) {
+            System.out.print("Hesabınızı Oluşturmak İçin Lütfen Kullanıcı Adı Girişi Yapınız : ");
+            String kullanici_adi = scanner1.nextLine();
+            System.out.print("Lütfen " + kullanici_adi + " Adlı Kullanıcı Adı İçin Parola Belirleyiniz : ");
+            String parola = scanner1.nextLine();
+# kullanıcıdan istediği isimi ve şifreyi aldık 
+            System.out.println("Hesabınız Başarı İle Oluşturuldu Hoş Geldin " + kullanici_adi +
+                    " Şimdi Kullanıcı Adını Ve Şifreni Girerek Sisteme Giriş Yapabilirsin : ");
+            System.out.print("Giriş Yapmak İstiyor Musunuz ?");
+            String soru3 = scanner1.nextLine();
+# şimdi ise daha önce aldığımız isim ve şifreyi tekrar aynı şekilde isteyerek sisteme sokucaz
+            if (soru3.equals("Evet")) {
+                System.out.print("Lütfen Kullanıcı Adınızı Giriniz : ");
+                String kullanici_adi_soru = scanner1.nextLine();
+                System.out.print("Lütfen Parolanızı Giriniz:");
+                String parola_soru = scanner1.nextLine();
+# ilk sefer girilen kod ile ikinci sefer girilen değerler eşit mi sorguluyoruz eşitse giriş başarılı !
+                if (kullanici_adi.equals(kullanici_adi_soru) && parola.equals(parola_soru)) {
+                    System.out.print("Giriş Başarılı : ");
+                } else {
+                    System.out.print("Giriş Başarısız : ");
+                }
+            } else {
+                System.out.println("Giriş işlemi iptal edildi.");
+            }
+        } else {
+            System.out.println("Giriş işlemi iptal edildi.");
+        }
+    }
+}
